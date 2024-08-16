@@ -1,5 +1,5 @@
 const postDescriptions = {
-    'girldata.png': `
+    'img/girldata.png': `
         <h2>Multi-Label Text Classification using Bag of Words and TF-IDF</h2>
         <p>Developed a multi-label text classifier using Bag of Words (BoW) and TF-IDF, enhanced with a RandomForest-based MultiOutputClassifier. Implemented advanced preprocessing techniques with scikit-learn, achieving 98% accuracy on diverse text data and improving classification efficiency by 30%.</p>
         <h3>Skills:</h3><p><ul><li>Python</li>
@@ -32,7 +32,7 @@ const postDescriptions = {
 <li>SQL</li>
 <li>Matplotlib</li><ul></p><br>
     `,
-    'girlweb.png': `
+    'img/girlweb.png': `
        <h2> Restaurant Website using Django</h2>
 <p>Developed a Django-based website for managing restaurant orders, including order placements and summary generation. Designed and implemented backend functionalities to handle and store orders in a database, integrating an order confirmation system with SMTP for email notifications. Created a user-friendly frontend using HTML and CSS, ensuring smooth interaction between frontend and backend components to enhance the overall user experience.</p>
 <h3>Skills:</h3><p><ul>
@@ -45,7 +45,7 @@ const postDescriptions = {
 <li>Web Development</li>
 <li>Backend Development</li>
 <li>Database Management</li></ul></p><br>   `,
-    'girl2.png': `
+    'img/girl2.png': `
         <h2>News Summary Extraction and Storage</h2>
 <p>Developed a web scraping tool to extract headlines and summaries of articles from five e-news websites. Utilized Scrapy and Requests in Python to gather and process news content. The extracted data is stored in .txt format for easy access and analysis. This project involved setting up web crawlers, handling multiple websites, and ensuring data is saved efficiently.</p>
 <h3>
