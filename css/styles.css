@@ -1,0 +1,505 @@
+html,body {
+    background-color: #000000; /* Dark background color */
+    color: #e0e0e0; /* Light text color */
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+  
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    width: 100%;
+}
+
+
+.container {
+    text-align: center; /* Center text inside */
+    width: 75%; /* Adjust width for smaller screens */
+    padding-top: 3%;
+    margin-left: 13%;
+    margin-right: 15%;
+}
+
+.profile-container {
+    display: ruby;
+    flex-direction: column; /* Stack profile elements vertically */
+    align-items: center;
+    padding: 20px;
+    margin-bottom: 5px; /* Space between profile and highlights */
+    text-align: left;
+    width: 100%; /* Adjust width for smaller screens */
+}
+
+.profile-picture {
+    margin-bottom: 20px; /* Space below profile picture */
+    padding: 15px; /* Adjust padding for smaller screens */
+}
+
+.profile-picture img {
+    width: 120px; /* Adjust size for smaller screens */
+    height: 120px;
+    border-radius: 50%; /* Circular profile picture */
+    border: 1px solid #e0e0e0; /* Optional border around the picture */
+}
+
+.profile-info h1 {
+    font-size: 24px; /* Adjust font size for smaller screens */
+    margin: 0;
+    line-height: 70px;
+}
+
+.profile-info p {
+    font-size: 16px; /* Adjust font size for smaller screens */
+    color: #b0b0b0; /* Slightly lighter text color for the username */
+}
+
+.profile-info .bio {
+    margin-top: 10px; /* Adjust space for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+    color: #e0e0e0;
+}
+
+.highlights-container {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    width: 65%;
+    padding: 0px 0;
+    margin-bottom: -20px;
+    gap: 15px;
+    
+}
+
+.highlight {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px; /* Adjust margin for smaller screens */
+    min-width: 60px; /* Adjust minimum width for smaller screens */
+    cursor: pointer;
+    position: relative;
+}
+
+.highlight img {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%; /* Circular image */
+    object-fit: cover; /* Ensure the image fits well in the circle */
+    background: radial-gradient(circle, transparent 55%, rgba(255, 0, 200, 0.7) 100%), linear-gradient(45deg, rgba(55, 20, 255, 0.7), rgba(255, 0, 200, 0.7),rgba(255,255,0,0.7)); /* Gradient effect */
+    background-origin: border-box; /* Ensure background gradient respects border radius */
+    background-clip: content-box, border-box; /* Clip the background to create border effect */
+    border: 3.5px solid transparent; /* Create space for the gradient effect */
+}
+
+.highlight span {
+    font-size: 12px; /* Adjust font size for smaller screens */
+    color: #e0e0e0;
+    margin-top: 5px; /* Adjust space for smaller screens */
+    text-align: center;
+}
+
+.posts-section {
+    margin-top: 0px;
+    padding: 20px;
+    width: 75%;
+    margin-left: 12%;
+}
+
+.buttons-container {
+    display: flex;
+    justify-content: center;
+    margin-bottom: 10px;
+    border-top: 1px solid #333;
+    margin-top: 60px; /* Space between buttons and posts */
+}
+
+.buttons-container button {
+    background-color: black;
+    border: none;
+    color: #e0e0e0;
+    padding: 8px 16px; /* Adjust padding for smaller screens */
+    font-size: 14px; /* Adjust font size for smaller screens */
+    margin: 0 5px;
+    border: 1px solid white;
+    cursor: pointer;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+.buttons-container button:hover {
+    background-color: #333;
+}
+
+.posts-grid {
+    display: flex;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* Adjusts the number of columns */
+    gap: 10px; /* Space between posts */
+    justify-content: center; /* Center the grid within its container */
+    width: 100%;
+}
+
+.post-box {
+    background-color: black;
+    border: 1px solid #333;
+    padding: 10px;
+    width: 100%; /* Adjust width for smaller screens */
+    height: auto; /* Fixed height to make it square */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.post-box img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Ensures the image covers the box while maintaining its aspect ratio */
+    border-radius: 5px;
+}
+
+/* Modal Styles */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: hidden; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,0.8); /* Black w/ opacity */
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-content {
+    background-color: black;
+    margin: 5% auto; /* Reduced margin for smaller screens */
+    padding: 20px;
+    border: 1px solid #333;
+    width: 90%; /* Adjust width for smaller screens */
+    height: 80%; /* Adjust height for smaller screens */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.modal-content::-webkit-scrollbar {
+    width: 2px; /* Thin scrollbar width */
+}
+
+.modal-content::-webkit-scrollbar-thumb {
+    background-color: #888; /* Grey color for the scrollbar */
+    border-radius: 0px; /* Rounded corners for the thumb */
+}
+
+.modal-content::-webkit-scrollbar-track {
+    background-color: transparent; /* Transparent track to keep it minimal */
+}
+
+/* For Firefox */
+.modal-content {
+    scrollbar-width: thin; /* Thin scrollbar for Firefox */
+    scrollbar-color: #888 transparent; /* Grey thumb with transparent track */
+    width: 60%;
+    height: 90%;
+}
+
+.modal-image {
+    width: 40%; /* Image takes up 40% of the width */
+    height: 100%; /* Full height of the modal */
+    overflow: hidden; /* Hide any overflow */
+    border-radius: 10px;
+}
+
+.modal-image img {
+    width: 100%; /* Full width of the container */
+    height: 100%;
+    object-fit: cover; /* Ensure image covers container */
+}
+
+.modal-description {
+    width: 60%; /* Text area takes up 60% of the width */
+    height: 100%;
+    padding: 20px;
+    color: #e0e0e0;
+    overflow-y: auto; /* Scroll if content is too large */
+}
+
+.close {
+    color: #e0e0e0;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+    position: absolute; /* Position absolutely */
+    top: 10px; /* Space from the top */
+    right: 10px; /* Space from the right */
+}
+
+.close:hover {
+    color: #bbb;
+}
+
+/* Highlight Modal */
+.highlight-modal-content {
+    width: 25%;
+    height: 90%; /* Adjust height for smaller screens */
+    position: relative;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    overflow: hidden;
+}
+
+.carousel-images {
+    display: flex;
+    transition: transform 0.5s ease;
+}
+
+.carousel-slide {
+    box-sizing: border-box;
+    width: 100%;
+    padding: 15px;
+}
+
+button {
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(0, 0, 0, 0.5);
+    color: white;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    z-index: 1;
+}
+
+button.prev {
+    left: 10px;
+}
+
+button.next {
+    right: 10px;
+}
+
+.icons {
+    display: flex;
+    gap: 15px;
+    margin-top: 5px;
+    margin-bottom: -8px;
+}
+
+.icon {
+    text-decoration: none;
+    color: white; /* Black color for the icons */
+    font-size: 18px; /* Adjust size as needed */
+}
+
+.icon:hover {
+    color: gray; /* Optional: Change color on hover */
+}
+
+@media (max-width: 768px) {
+    body{
+        display: -ms-inline-grid;
+    }
+    .profile-container, .highlights-container, .posts-grid, .modal-content, .highlight-modal-content {
+        width: 100%; /* Full width for smaller screens */
+    }
+
+    .profile-picture img {
+        width: 100px; /* Smaller profile picture for smaller screens */
+        height: 100px;
+    }
+
+    .profile-info h1 {
+        font-size: 20px; /* Adjust font size for smaller screens */
+        line-height: 20px;
+    }
+
+    .profile-info p {
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .profile-info .bio {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .highlight {
+        margin: 5px; /* Adjust margin for smaller screens */
+        min-width: 50px; /* Smaller minimum width for highlights */
+    }
+
+    .highlight img {
+        width: 50px; /* Smaller highlight image for smaller screens */
+        height: 50px;
+    }
+
+    .highlight span {
+        font-size: 12px; /* Adjust font size for smaller screens */
+    }
+
+    .buttons-container button {
+        padding: 8px 16px; /* Adjust padding for smaller screens */
+        font-size: 14px; /* Adjust font size for smaller screens */
+    }
+
+    .post-box {
+        width: 100%; /* Full width for post boxes on smaller screens */
+        height: auto; /* Adjust height to auto for responsiveness */
+    }
+
+    .modal-content {
+        width: 90%; /* Adjust width for smaller screens */
+        height: 80%; /* Adjust height for smaller screens */
+    }
+
+    .modal-image {
+        width: 50%; /* Adjust image width for smaller screens */
+        height: 100%;
+    }
+
+    .modal-description {
+        width: 50%; /* Adjust text area width for smaller screens */
+        height: 100%;
+    }
+
+    .carousel-images {
+        flex-direction: column; /* Stack carousel images vertically on small screens */
+    }
+
+    .carousel-slide {
+        width: 100%; /* Full width for carousel slides */
+    }
+
+    button {
+        padding: 8px; /* Smaller padding for carousel buttons on small screens */
+    }
+
+    .icons {
+        flex-direction: row; /* Stack icons vertically for small screens */
+        gap: 10px; /* Adjust gap for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    html, body {
+        background-color: #000000;
+        color: #e0e0e0;
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        display: -ms-inline-grid;
+        justify-content: center;
+        height: 100%;
+    }
+
+    .container{
+        width: 75%;
+        padding-top: 5%;
+        
+    }
+    
+    .profile-container{
+        display: inline-block;
+        width: 80%;
+    }
+    .profile-picture {
+        margin-bottom: 5px;
+        padding: 15px;
+    }
+
+    .profile-picture img {
+        width: 80px; /* Even smaller profile picture */
+        height: 80px;
+        margin-left: -10px;
+    }
+
+    .profile-info h1 {
+        font-size: 18px; /* Smaller font size for very small screens */
+        line-height: 10px;
+    }
+
+    .profile-info p {
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+
+    .profile-info .bio {
+        font-size: 10px; /* Even smaller font size for very small screens */
+    }
+
+    .highlight {
+        margin: 2px; /* Adjust margin for very small screens */
+        min-width: 40px; /* Smaller minimum width for highlights */
+    }
+    .highlights-container{
+        width: 80%;
+    justify-content: left;
+  
+    gap: 20px
+    }
+    .highlight img {
+        width: 50px; /* Smaller highlight image */
+        height: 50px;
+    }
+
+    .highlight span {
+        font-size: 10px; /* Smaller font size for very small screens */
+    }
+
+    .highlight-modal-content{
+        justify-content: left;
+    }
+    .buttons-container button {
+        padding: 6px 12px; /* Smaller padding for very small screens */
+        font-size: 12px; /* Smaller font size for very small screens */
+    }
+
+    .post-box {
+        width: 100%; /* Full width for post boxes on very small screens */
+        height: auto; /* Adjust height to auto for responsiveness */
+    }
+    .posts-section{
+
+    padding: 20px;
+    width: 65%;
+    justify-content: center;
+    display: flex;
+    }
+    .modal-content {
+        width: 79%;
+        height: 65%;
+        display: ruby;
+        overflow: scroll;
+    }
+
+    .modal-image {
+        width: 95%;
+        height: 35%;
+    }
+
+    .modal-description {
+        width: 93%;
+        height: 100%;
+    }
+    .carousel-images {
+        flex-direction: row; /* Stack carousel images vertically on small screens */
+    }
+    .icons {
+        flex-direction: row; /* Stack icons horizontally if space permits */
+        gap: 10px; /* Adjust gap for very small screens */
+    }
+    .icon {
+        font-size: 15px;
+    }
+    button.next {
+        right: 10px;
+        position: absolute;
+    }
+    button.prev {
+        left: 10px;
+        position: absolute;
+    }
+}

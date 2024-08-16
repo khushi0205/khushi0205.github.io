@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khushi Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="../css/styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="container" >
+        <div class="profile-container">
+            <div class="profile-picture">
+                <img src="../img/crop.jpg" alt="Profile Picture">
+            </div>
+            <div class="profile-info" >
+                <h1>Khushi Sali</h1>
+                <div class="icons">
+                    <a href="https://github.com/khushi0205" target="_blank" class="icon"><i class="fab fa-github"></i></a>
+                    <a href="mailto:khushi.sali2002@gmail.com" class="icon"><i class="fas fa-envelope"></i></a>
+                    <a href="https://instagram.com/khushi._0205" target="_blank" class="icon"><i class="fab fa-instagram"></i></a>
+                    <a href="https://www.linkedin.com/in/khushisali/" target="_blank" class="icon"><i class="fab fa-linkedin"></i></a>
+                </div>
+                <p class="bio">AI Enthusiast | Data Analysis | Machine Learning | Time Series Forecasting<br>Love Gaming | Freelancing<br>Badminton<br></p>
+            </div>
+        </div>
+        <div class="highlights-container">
+            <div class="highlight" onclick="openHighlightModal('highlight1.jpg')">
+                <img src="../img/2.png" alt="Highlight 1">
+                <span>Internship</span>
+            </div>
+            <div class="highlight" onclick="openHighlightModal('highlight2.jpg')">
+                <img src="../img/3.png" alt="Highlight 2">
+                <span>B.E.</span>
+            </div>
+            <div class="highlight" onclick="openHighlightModal('highlight3.jpg')">
+                <img src="../img/4.png" alt="Highlight 3">
+                <span>Extra</span>
+            </div>
+            <!-- Add more highlights as needed -->
+        </div>
+        <div class="buttons-container">
+            <button ><a href="../index.html" style="color: white;  text-decoration: none;">Projects</a></button>
+            <button ><a href="skills.html" style="color: white;  text-decoration: none;">Skills</a></button>
+            
+        </div>
+        </div>
+        <div class="posts-section">
+            <div class="skills-chart">
+                <canvas id="skillsChart" width="400" height="200"></canvas>
+
+        </div>
+        <br>
+        <br>
+ 
+
+    <!-- Post Modal -->
+
+    
+    <!-- Highlight Modal -->
+    <div id="highlightModal" class="modal">
+        <span class="close" onclick="closeModal('highlightModal')">&times;</span>
+        <div class="highlight-modal-content modal-content">
+            <!-- Carousel content will be dynamically inserted here -->
+        </div>
+    </div>
+    <script src="../js/script_skills.js"></script>
+</body>
+</html>
+    
+    
